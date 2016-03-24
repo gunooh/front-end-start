@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <title>Chess Board</title>
+    <style>
+      #board{width:400px; height:400px;}
+      .black{display:block; width:100px; height:100px; background-color:black;}
+      .white{display:block; width:100px; height:100px; background-color:white;}
+      .red{display:block; width:100px; height:100px; background-color:red;}
+      span{float:left}
+    </style>
+
+
+</head>
+<body>
+
+<div id="board">
+    <!-- 이 HTML을 자바스크립트로 추가하면 됩니다.
+      <span class="black"></span>
+      <span class="white"></span>
+      <span class="black"></span>
+      <span class="white"></span>
+
+      <span class="white"></span>
+      <span class="black"></span>
+      <span class="white"></span>
+      <span class="black"></span>
+
+      <span class="black"></span>
+      <span class="white"></span>
+      <span class="black"></span>
+      <span class="white"></span>
+
+      <span class="white"></span>
+      <span class="black"></span>
+      <span class="white"></span>
+      <span class="black"></span>
+    //-->
+
+    <script>
+        var black = "<span class=\"black\"></span>";
+        var white = "<span class=\"white\"></span>";
+        var red = "<span class=\"red\"><span>";
+
+        var box = black;
+
+        for(var i=0; i<4; i++){
+            for(var j=0; j<4; j++){
+              if(box == black)
+              {
+                document.getElementById("board").innerHTML += black;
+                box = white;
+              }
+              else if(box == white)
+              {
+                document.getElementById("board").innerHTML += white;
+                box = black;
+              }
+          }
+
+          if(box == black) {box = white;}
+          else if(box == white) {box = black;}
+
+      }
+
+      // window.addEventListener('click' function()
+      // {
+      //   document.getElementById("board").innerHTML += red;
+      // });
+
+    </script>
+</div>
+</body>
+</html>
