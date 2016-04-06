@@ -1,0 +1,9 @@
+*{margin:0;padding:0;font-size:0;}
+#scoreboard{width:400px; height:80px; font-size:20px; text-align:center; border:1px solid black;}
+#score{color:red; font-size:20px;}
+#level{color:red; font-size:20px;}
+#miss{color:red; font-size:20px;}
+#limit{color:red; font-size:20px;}
+#board{width:400px;height:400px; border:1px solid black}
+.white{display:inline-block; width:20px; height:20px; background-color:white}
+.red{display:inline-block; width:20px; height:20px; background-color:red}
