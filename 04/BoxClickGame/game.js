@@ -52,7 +52,7 @@ function loop()
     clearInterval(timer);
     alert('Game Over');
   }
-  if(score >= 3)
+  if(score >= 15)
   {
     level++;
     document.getElementById('level').innerHTML = level;
