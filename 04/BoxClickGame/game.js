@@ -9,6 +9,7 @@ var missCount = 0;
 var tempTarget = 0;
 var tempAttribute = 0;
 var speed = 5000;
+
 for(var i = 0; i < 400; i++)
 {
   array[i] = white;
@@ -45,6 +46,8 @@ function loop()
     tempTarget = span[rand];
     score++;
     document.getElementById('score').innerHTML = score;
+    clearInterval(timer);
+    timer = setInterval(loop, speed);
   });
 
   if(missCount >= 11)
@@ -61,6 +64,9 @@ function loop()
     document.getElementById('miss').innerHTML = missCount;
     score = 0;
     document.getElementById('score').innerHTML = score;
+    alert("Level : " +level);
+    clearInterval(timer);
+    setInterval(loop, speed);
   }
   if(level > 10)
   {
