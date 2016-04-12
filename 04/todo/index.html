@@ -11,19 +11,22 @@
   <header>
     <h1>Todo List</h1>
 
-    <form class="new-task">
-      <input type="text" name="text" placeholder="할일을 입력하세요">
+    <form class="new-task" onsubmit="return false">
+      <input type="text" name="text"
+      id="todoString" placeholder="할일을 입력하세요">
     </form>
   </header>
-  <ul>
+  <ul id="todoList"> </ul>
+  <!-- <ul>
     <li>
       <button class="delete">×</button>
       <input type="checkbox" class="toggle-checked">
       <span class="text">JS공부하기</span>
     </li>
-  </ul>
+  </ul> -->
 
 </div>
 
+<script src="todos.js"></script>
 </body>
 </html>

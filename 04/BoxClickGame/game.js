@@ -22,10 +22,10 @@ tempAttribute = span[rand].getAttribute('class')
 span[rand].setAttribute('class', 'red');
 tempTarget = span[rand];
 
+var timer;
+timer = setInterval(loop, speed);
 
-var timer = setInterval(loop, speed);
-
-function loop()
+function random()
 {
   tempTarget.setAttribute('class', tempAttribute);
 
@@ -33,28 +33,35 @@ function loop()
   tempAttribute = span[rand].getAttribute('class');
   span[rand].setAttribute('class', 'red');
   tempTarget = span[rand];
+}
+
+span[rand].addEventListener('click', clickEvent);
+
+function clickEvent()
+{
+  score++;
+  document.getElementById('score').innerHTML = score;
+  clearInterval(timer);
+  random();
+}
+
+timer = setInterval(loop, speed);
+
+function loop()
+{
+  tempTarget.setAttribute('class', tempAttribute);
+
+  random();
   missCount++;
   document.getElementById('miss').innerHTML = missCount;
 
-  span[rand].addEventListener('click', function(event)
-  {
-    tempTarget.setAttribute('class', tempAttribute);
-
-    rand = Math.floor(Math.random() * 400);
-    tempAttribute = span[rand].getAttribute('class');
-    span[rand].setAttribute('class', 'red');
-    tempTarget = span[rand];
-    score++;
-    document.getElementById('score').innerHTML = score;
-    clearInterval(timer);
-    timer = setInterval(loop, speed);
-  });
 
   if(missCount >= 11)
   {
     clearInterval(timer);
     alert('Game Over');
   }
+
   if(score >= 15)
   {
     level++;
