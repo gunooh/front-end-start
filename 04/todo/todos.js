@@ -5,7 +5,7 @@ function getDom(id){
   return document.getElementById(id);
 }
 
-function deleteTag(target)
+function deleteElement(target)
 {
   event.target.parentElement.remove();
 }
@@ -23,13 +23,13 @@ todoStringField.addEventListener('keyup', function (event) {
 
        var newTodo = todoStringField.value;
        todoStringField.value = "";
-       
+
        console.log('새로운 todo:', newTodo);
 
        var listDom = getDom('todoList');
        listDom.innerHTML += ' \
          <li>\
-             <button class="delete" onclick=\"deleteTag(this)\">×</button>\
+             <button class="delete" onclick=\"deleteElement(this)\">×</button>\
              <input type="checkbox" class="toggle-checked">\
              <span class="text"> '+ newTodo +' </span>\
          </li>';
