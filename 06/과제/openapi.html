@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>open API</title>
+  <style>
+    a{text-decoration:none}
+  </style>
+</head>
+<body>
+
+    <input type="text" id="search" placeholder="검색할 단어 입력">
+    <input type="button" value="검색">
+    <br></br>
+
+  <div id="wrap"></div>
+  <script type="text/template" id="searchListTemplate">
+  <%
+  for(var i=0; i<list.length; i++) {
+    var search = list[i];
+  %>
+
+    <li>
+      <a href="<%= search.link %>"> <%= search.title %></a>
+    </li>
+  <%
+  }
+  %>
+  </script>
+    <br></br>
+    <button id="prevPage"> 이전 </button>
+    <button id="nextPage"> 다음 </button>
+
+  <script src="jsonp.js"></script>
+  <script src="openapi.js"></script>
+  <script src="ajax.js"></script>
+  <script src="tmpl.js"></script>
+
+</body>
+</html>
