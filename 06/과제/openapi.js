@@ -2,6 +2,7 @@ console.log('openapi.js')
 
 var template = document.getElementById('searchListTemplate').innerHTML;
 var input = document.getElementById('search');
+var searchButton = document.getElementById('searchButton');
 var wrap = document.getElementById('wrap');
 var nextPage = document.getElementById('nextPage');
 var prevPage = document.getElementById('prevPage');
@@ -35,6 +36,13 @@ input.addEventListener('keyup', function(event){
     page = 1; // 새로운 검색시 페이지를 1로 초기화
     addInfo();
   }
+});
+
+searchButton.addEventListener('click', function(event){
+  searchObject = input.value;
+  wrap.innerHTML='';
+  page = 1;
+  addInfo();
 });
 
 prevPage.addEventListener('click', function(event){
